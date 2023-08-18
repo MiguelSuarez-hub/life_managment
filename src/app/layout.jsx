@@ -2,6 +2,7 @@ import { ContextProvider } from "@/context/GlobalState";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
+import TransactionForm from "@/components/TransactionForm";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ContextProvider>
           <Header />
+          <TransactionForm />
           {children}
         </ContextProvider>
       </body>

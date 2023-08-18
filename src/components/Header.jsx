@@ -1,12 +1,9 @@
-'use client';
-
-import { UseGlobalContext } from "@/context/GlobalState";
-
 const Header = () => {
-  const data = UseGlobalContext();
   return (
-    <div>Header {JSON.stringify(data)} </div>
-  )
-}
+    <div>
+      <h1>Header</h1>
+    </div>
+  );
+};
 
-export default Header
+export default Header;
