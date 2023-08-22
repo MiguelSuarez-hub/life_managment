@@ -14,11 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} mx-10 bg-slate-900 text-white h-screen`}
+      >
         <ContextProvider>
-          <Header />
-          <TransactionForm />
-          {children}
+          <main className="">
+            <Header />
+            <TransactionForm />
+            {children}
+          </main>
         </ContextProvider>
       </body>
     </html>
