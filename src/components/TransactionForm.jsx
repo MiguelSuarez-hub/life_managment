@@ -36,7 +36,7 @@ const TransactionForm = () => {
       ></input>
       </label>
       <label className="w-full">
-        <span>Valor, para gasto "-" previo al valor</span>
+        <span>Valor, para gasto colocar signo - previo al valor</span>
         <input
         type="number"
         placeholder="$ 0"
