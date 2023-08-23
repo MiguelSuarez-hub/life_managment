@@ -15,16 +15,18 @@ export const UseGlobalContext = () => {
 };
 
 export const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState, () => {
-    if (typeof window !== "undefined") {
-      const localData = localStorage.getItem("transactions");
-      return localData ? JSON.parse(localData) : initialState;
-    }
-  });
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
-useEffect(() => {
-    localStorage.setItem("transactions", JSON.stringify(state));
-  }, [state]);
+  useEffect(() => {
+    const localData = localStorage.getItem("transactions");
+    const data = localData ? JSON.parse(localData).transactions : [];
+    console.log(data);
+    data.length > 0 &&
+      dispatch({
+        type: "GET_TRANSACTIONS",
+        payload: data,
+      });
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(state));
