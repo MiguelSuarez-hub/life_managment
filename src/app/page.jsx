@@ -8,7 +8,7 @@ export default function Home() {
     <main className="">
       <h1 className="text-4xl font-bold mb-3">Tu economia</h1>
 
-      <section className="grid grid-cols-3">
+      <section className="md:grid md:grid-cols-3">
         <div className="flex flex-col items-center p-4">
           <TransactionForm />
           <Balance />

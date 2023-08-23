@@ -15,9 +15,9 @@ const TransactionList = () => {
   );
 
   return (
-    <section className="w-full flex flex-col gap-2">
+    <section className="w-full flex flex-col gap-2 mb-3">
       <ul>
-        <li className="font-bold text-xl text-green-500">Ingresos</li>
+        <li className="font-bold text-md md:text-xl text-green-500">Ingresos</li>
         {incomeTransactions.map((transaction) => {
           return (
             <TransactionItem key={transaction.id} transaction={transaction} />
@@ -25,7 +25,7 @@ const TransactionList = () => {
         })}
       </ul>
       <ul>
-        <li className="font-bold text-xl text-red-700">Egresos</li>
+        <li className="font-bold text-md md:text-xl text-red-700">Egresos</li>
         {expenseTransactions.map((transaction) => {
           return (
             <TransactionItem key={transaction.id} transaction={transaction} />
